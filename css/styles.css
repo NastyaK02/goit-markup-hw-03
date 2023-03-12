@@ -6,6 +6,8 @@
   --btn-color: #404bbf;
   --footer-background-color: #2e2f42;
   --background: #ffffff;
+  --background-team-color: #f4f4fd;
+  --border-btn-color: #e7e9fc;
 }
 
 body {
@@ -27,10 +29,13 @@ ul {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
+.section {
+  padding: 120px 0;
+}
 /* Container */
 
 .container {
@@ -39,6 +44,8 @@ img {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+
+  
 }
 
 .list {
@@ -97,13 +104,13 @@ img {
   align-items: center;
   justify-content: space-between;
   display: flex;
-  border-bottom: 1px solid #e7e9fc;
   padding-bottom: 24px;
   padding-top: 24px;
   text-align: center;
 }
 
 .header {
+  border-bottom: 1px solid var(--border-btn-color);
 }
 
 .header-nav {
@@ -124,22 +131,24 @@ img {
 /* Hero */
 .hero-container {
   display: flex;
-  justify-content: center;
+  padding-top: 188px;
+  padding-bottom: 188px;
+  margin: 0 auto;
   align-items: center;
   flex-direction: column;
 }
 
 .hero {
   background: var(--title-text-color);
-  padding: 200px 0;
 }
 .hero-title {
   font-size: 56px;
   line-height: 1.07;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: var(--background);
   margin-bottom: 48px;
   width: 496px;
+  text-align: center;
 }
 
 .hero-btn {
@@ -147,16 +156,13 @@ img {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--background);
   background-color: var(--accent-color);
   letter-spacing: 0.04em;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding: 16px 32px;
-  gap: 10px;
   border-radius: 4px;
+  border-style: none;
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -165,14 +171,22 @@ img {
 
 /* Feature */
 
-.features-heading {
-  opacity: 0;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .feature-container {
-  align-items: center;
   width: 1128px;
-  left: 156px;
+  margin: 0 auto;
 }
 
 .feature-title {
@@ -181,7 +195,11 @@ img {
   text-transform: capitalize;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
-  padding-bottom: 8px;
+  margin-bottom: 8px;
+
+
+  background-color: hotpink;
+  
 }
 
 .feature-list {
@@ -191,19 +209,25 @@ img {
   color: var(--primary-text-color);
   display: flex;
   gap: 24px;
-  padding-top: 120px;
-  padding-bottom: 120px;
+
+
+
+  background-color: chocolate;
+  
 }
 
 .feature-text {
   width: 264px;
+  gap: 24px;
 }
 
 /* Work */
+
 .work-container {
   align-items: center;
-  width: 1128px;
-  left: 156px;
+  width: 1158px;
+  padding-bottom: 120px;
+  
 }
 
 .section-title {
@@ -218,25 +242,24 @@ img {
 .work-list {
   display: flex;
   gap: 24px;
-  padding-bottom: 120px;
+  flex-wrap: wrap;
+  flex-basis: calc((100% - 24px) / 3);
 }
 
 /* Our team */
 
 .team-container {
-  padding-top: 120px;
   align-items: center;
-  width: 1128px;
-  left: 156px;
 }
 
 .team-list {
   display: flex;
   gap: 24px;
-  padding-bottom: 120px;
+  flex-basis: calc((100% - 3 * 24px) / 4);
 }
+
 .team {
-  background-color: #f4f4fd;
+  background-color: var(--background-team-color);
 }
 
 .text {
@@ -245,8 +268,9 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
+  margin: 32px 16px;
   gap: 8px;
+  
 }
 .team-title {
   font-size: 20px;
@@ -254,17 +278,13 @@ img {
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
-  padding-top: 32px;
+  
 }
 
 .team-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 8px;
-  background: #ffffff;
+  background: var(--background);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
@@ -275,26 +295,15 @@ img {
   line-height: 1.5;
   color: var(--primary-text-color);
   letter-spacing: 0.02em;
-  padding-bottom: 32px;
 }
 
 /* Portfolio */
-.hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+
+
 
 .button-container {
-  
   padding-top: 96px;
+  padding-bottom: 120px;
 }
 
 .filters {
@@ -313,36 +322,32 @@ img {
   font-size: 16px;
   line-height: 1.5;
   color: var(--accent-color);
-  background: #f4f4fd;
+  background: var(--background-team-color);
   letter-spacing: 0.04em;
   padding: 12px 24px;
-  border: 1px solid #e7e9fc;
+  border: 1px solid var(--border-btn-color);
   border-radius: 4px;
   cursor: pointer;
 }
 .filter-btn:hover,
 .filter-btn:focus {
   background: var(--btn-color);
-  color: #ffffff;
+  color: var(--background);
 }
-
-
 
 .project-list {
   display: flex;
   flex-wrap: wrap;
   padding-top: 72px;
-  padding-bottom: 120px;
   column-gap: 24px;
   row-gap: 48px;
-  
+  flex-basis: calc((100% - 2 * 24px) / 3);
 }
 
 .project-item {
-  max-width: calc((100% - 48px) /3);
-  border: 1px solid #E7E9FC;
- 
-  
+  max-width: calc((100% - 48px) / 3);
+  border: 1px solid var(--border-btn-color);
+  border-top: none;
 }
 
 .project-title {
@@ -366,10 +371,10 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 32px 16px;
+  padding: 0px 16px;
   gap: 8px;
+  margin: 32px 0;
 }
-
 
 /* Footer */
 
@@ -385,9 +390,9 @@ img {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #e7e9fc;
+  color: var(--border-btn-color);
   max-width: 264px;
-  padding-top: 16px;
+  margin-top: 16px;
 }
 
 .footer-logo {
@@ -395,7 +400,7 @@ img {
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
-  color: #4d5ae5;
+  color: var(--accent-color);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -404,7 +409,7 @@ img {
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
-  color: #f4f4fd;
+  color: var(--background-team-color);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
